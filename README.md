@@ -1,35 +1,43 @@
-# babel-helper-error-stack
+# babel-plugin-replace-import-src-to-where
 
-make your error stack from this 
+make your import or require path from this 
 
 ```
-Error: something error
-	at WhatClass.method(index.js 10:1)
-	at WhatClass2.method(index.js 20:3)
+import aaa from "src/file/aaa/path";
+var bbb = require("src/file/bbb/path");
+var config = {
+	ccc: "src/file/ccc/path"
+}
 ```
 
 to this
 
 ```
-Error: something error
-	at WhatClass.method(/home/name/projects/project-name/components/componentA/index.js 10:1)
-	at WhatClass2.method(/home/name/projects/project-name/components/componentB/index.js 20:3)
+import aaa from "lib/file/aaa/path";
+var bbb = require("lib/file/bbb/path");
+var config = {
+	ccc: "lib/file/ccc/path"
+}
 ```
 
 ## Install
 
 ```
-$ npm install babel-helper-error-stack
+$ npm install babel-plugin-replace-import-src-to-where
 ```
 
-## Usage for your entry js
+## Usage for your .babelrc
 
 ```js
-import from "babel-helper-error-stack";
-
-// or
-
-require("babel-helper-error-stack");
+{
+	"env": {
+		"dev": {
+			"plugins": [
+				"replace-import-src-to-where"
+			]
+		}
+	}
+}
 ```
 
 
