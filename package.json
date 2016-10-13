@@ -1,6 +1,6 @@
 {
 	"name": "babel-plugin-replace-import-src-to-where",
-	"version": "0.0.5",
+	"version": "1.0.0",
 	"description": "fix import or require path from src to somewhere when compiler",
 	"license": "MIT",
 	"main": "lib/index.js",
