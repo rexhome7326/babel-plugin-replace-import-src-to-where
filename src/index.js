@@ -17,22 +17,26 @@ exports.default = function (babel) {
       CallExpression(path, state) {
         //if(checkFlag === true){
           if(path.node.arguments.length > 0){
-            path.node.arguments.map(function loop(node, index){
+            for(var index = 0; index < path.node.arguments.length; index++){
+              var node = path.node.arguments[index];
+              
               if(node.type === "StringLiteral" && source.test(node.value)){
                 node.value = node.value.replace(source, replaceTo);
               }
-            });
+            }
           }
         //}
       },
       ArrayExpression(path, state) {
         //if(checkFlag === true){
           if(path.node.elements.length > 0){
-            path.node.elements.map(function loop(node, index){
+            for(var index = 0; index < path.node.elements.length; index++){
+              var node = path.node.elements[index];
+              
               if(node.type === "StringLiteral" && source.test(node.value)){
                 node.value = node.value.replace(source, replaceTo);
               }
-            });
+            }
           }
         //}
       },
