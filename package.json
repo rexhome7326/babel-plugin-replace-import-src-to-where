@@ -1,6 +1,6 @@
 {
 	"name": "babel-plugin-replace-import-src-to-where",
-	"version": "1.1.0",
+	"version": "1.2.1",
 	"description": "fix import or require path from src to somewhere when compiler",
 	"license": "MIT",
 	"main": "lib/index.js",
@@ -9,7 +9,8 @@
 		"url": "https://github.com/rexhome7326/babel-plugin-replace-import-src-to-where"
 	},
 	"scripts": {
-		"babel": "babel src --out-dir lib"
+		"babel": "babel src --out-dir lib",
+		"prepublish": "npm run babel"
 	},
 	"files": [
 		"lib"
@@ -24,7 +25,9 @@
 		"runtime"
 	],
 	"dependencies": {
-		"babel-core": "^6.10.4"
+		
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"babel-core": "^6.10.4"
+	}
 }
